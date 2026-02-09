@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { tvShows } from "./shows/data";
 import ShowSelection from "./shows/ShowSelection";
+import ShowDetails from "./shows/ShowDetails";
 
 /**
  * React TV is an web streaming platform that allows users to browse
@@ -19,7 +20,12 @@ export default function App() {
           setSelectedShow={setSelectedShow}
         />
       </header>
-      <main></main>
+      <main>
+        <ShowDetails
+        key={selectedShow?.name}
+        show={selectedShow}
+        />
+      </main>
     </>
   );
 }
